@@ -51,8 +51,8 @@ deployment:
 # Pod disruption budget
 podDisruptionBudget:
   enabled: false
-  # maxUnavailable: 1
-  # minAvailable: 0
+  maxUnavailable: 4
+  minAvailable: 1
 
 # Use ingressClass. Ignored if Traefik version < 2.3 / kubernetes < 1.18.x
 ingressClass:
@@ -98,7 +98,7 @@ providers:
       # - "default"
     # IP used for Kubernetes Ingress endpoints
     publishedService:
-      enabled: false
+      enabled: true
       # Published Kubernetes Service to copy status from. Format: namespace/servicename
       # By default this Traefik service
       # pathOverride: ""
@@ -132,7 +132,7 @@ logs:
     # also ask for the json format in the format option
     # format: json
     # By default, the level is set to ERROR. Alternative logging levels are DEBUG, PANIC, FATAL, ERROR, WARN, and INFO.
-    level: DEBUG
+    level: ERROR
   access:
     # To enable access logs
     enabled: false
