@@ -75,7 +75,7 @@ experimental:
 # Create an IngressRoute for the dashboard
 ingressRoute:
   dashboard:
-    enabled: false
+    enabled: true
     # Additional ingressRoute annotations (e.g. for kubernetes.io/ingress.class)
     annotations: {}
     # Additional ingressRoute labels (e.g. for filtering IngressRoute by custom labels)
@@ -281,7 +281,8 @@ service:
   enabled: true
   type: LoadBalancer
   # Additional annotations (e.g. for cloud provider specific config)
-  annotations: {}
+  annotations: 
+    service.beta.kubernetes.io/aws-load-balancer-type: nlb
   # Additional service labels (e.g. for filtering Service by custom labels)
   labels: {}
   # Additional entries here will be added to the service spec. Cannot contains
