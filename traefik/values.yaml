@@ -281,8 +281,7 @@ service:
   enabled: true
   type: LoadBalancer
   # Additional annotations (e.g. for cloud provider specific config)
-  annotations: 
-    service.beta.kubernetes.io/aws-load-balancer-type: nlb
+  annotations: {}
   # Additional service labels (e.g. for filtering Service by custom labels)
   labels: {}
   # Additional entries here will be added to the service spec. Cannot contains
